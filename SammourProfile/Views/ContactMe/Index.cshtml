@@ -1,0 +1,43 @@
+﻿@{
+	ViewData["Title"] = "Contact Me";
+}
+@model Contact 
+
+<div class="Divcont">
+   <div class="ImageDiv"><img src="/images/Contact.png" class="img-fluid shadow" alt="Responsive image"/>
+    </div>
+    <div class="ContactDiv  shadow1">
+        <h3 class="mb-2 display-4 text-center">Contact Me</h3>
+        <hr style="width:20%;margin:0px auto;height:5px;" />
+        <hr style="width:10%;margin:5px auto;height:3px;" />
+        <form asp-action="CreateContact" method="POST">
+            <div class="mb-3 mt-3">
+                <i class='fas fa-user-alt'></i>
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="inputdiv" placeholder="Your name..">  
+                <span asp-validation-for="Name" class="text-danger" style="font-size:12px"></span>
+            </div>
+            <div class="mb-3 mt-3">
+                <i class='fas fa-at'></i>
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" type="email" class="inputdiv" placeholder="Your email..">
+                <span asp-validation-for="Email" class="text-danger" style="font-size:12px"></span>
+            </div>
+            <div>
+                <i class='fas fa-envelope-open-text'></i>
+                <label asp-for="Message" class="form-check-label" for="subject"></label>
+                <textarea asp-for="Message" class="inputdiv" rows="5" placeholder="Please enter your message.." maxlength="1000"></textarea>
+                <span asp-validation-for="Message" class="text-danger" style="font-size:12px"></span>
+            </div>
+            <input type="submit" value="Submit" class="mt-3 button1">
+            <input type="reset" class="mt-3 button1"> 
+        </form>
+    </div>   
+</div>
+<br /><br />
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

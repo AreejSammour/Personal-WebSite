@@ -1,0 +1,25 @@
+﻿@model List<Skill>
+@{
+	ViewData["Title"] = "My Skills";
+}
+
+<section class="ListClass">
+	<h1 class="mb-2 display-4 text-center">My Skills</h1>
+	<hr style="width:20%;margin:0px auto;height:5px;" />
+	<hr style="width:10%;margin:5px auto;height:3px;" />
+	<div class="DivItem">
+		@foreach (Skill Item in Model)
+		{
+			<div class="alt-div">
+				<div class="alt-name">
+					<img src="@Item.ImageURL" class="img-fluid rounded-circle float-end" style="width:20%" alt="Responsive image">
+					<span class="alt-span">@Item.Name</span>
+				</div>
+				<div class="prog-name">
+					<span>@Item.Description</span>
+				</div>
+			</div>
+		}
+	</div>
+	<br /><br />
+</section>
